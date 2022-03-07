@@ -29,19 +29,20 @@ export default function FormPost({ selectedPost, setUpdater, updater }) {
   }, [form, selectedPost]);
 
   return (
-    <Form form={form} {...layout} onFinish={onFinish}>
+    <Form
+      form={form}
+      labelCol={{ span: 4 }}
+      wrapperCol={{ span: 18 }}
+      onFinish={onFinish}
+    >
       <Form.Item name={'title'} label="Title">
-        <Input style={{ width: 310 }} />
+        <Input  />
       </Form.Item>
       <Form.Item name={'content'} label="Content">
-        <Input.TextArea style={{ width: 310, height: 250 }} />
+        <Input.TextArea  />
       </Form.Item>
-      <Form.Item  style={{paddimg: 'auto' }}>
-        <Button
-          type="primary"
-          htmlType="submit"
-          style={{ maxWidth: 480, margin: 'auto' }}
-        >
+      <Form.Item wrapperCol={{ offset: 0, span: 24 }}>
+        <Button type="primary" htmlType="submit" style={{ maxWidth: 550, width:"100%" }}>
           Submit
         </Button>
       </Form.Item>

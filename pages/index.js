@@ -21,9 +21,12 @@ export default function Home() {
   return (
     <div>
       <Header>
-        <ProfileImage />
-
-        <MenuHeader setUpdater={setUpdater} updater={updater} />
+        <ProfileImage style={{ display: 'inline' }} />
+        <MenuHeader
+          setUpdater={setUpdater}
+          updater={updater}
+          style={{ display: 'inline' }}
+        />
       </Header>
       <div style={{ minHeight: 580, backgroundColor: '#2a2a2a' }}>
         <WallPost

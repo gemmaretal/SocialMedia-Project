@@ -1,4 +1,4 @@
-import { Card, Avatar } from 'antd';
+import { Card, Avatar, Spin } from 'antd';
 import React, { useState } from 'react';
 import FormPost from './FormPost';
 import { EditOutlined, DeleteOutlined, MoreOutlined } from '@ant-design/icons';
@@ -41,9 +41,10 @@ export default function WallPost({ listPosts, setUpdater, updater }) {
   //Get a Post
   function detailHandler(value) {
     setIsModalVisible(true);
-    Services.getPost(value.id);
-    setSelectedPost(value);
+    setSelectedPost("")
+    Services.getPost(value.id, setSelectedPost);
   }
+
   return (
     <div
       style={{
@@ -97,10 +98,12 @@ export default function WallPost({ listPosts, setUpdater, updater }) {
             {typeModal === 1 ? (
               `Update Post`
             ) : (
-              <div style={{ display: 'inline-block' }}>
-                <ProfileImage style={{ display: 'inline-block' }} />{' '}
-                {selectedPost.title}
-              </div>
+            selectedPost&&selectedPost!==""? <div style={{ paddingBottom: 10 }}>
+            <ProfileImage style={{ display: 'inline' }} />
+            <div style={{ fontSize: 38, color: '#2a2a2a', display: 'inline' }}>
+              {selectedPost.title}
+            </div>
+          </div>:<Spin/>
             )}
           </h3>
         }

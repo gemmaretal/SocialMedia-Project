@@ -4,6 +4,7 @@ import PostModal from './PostModal';
 import { UserOutlined, FormOutlined, HomeOutlined } from '@ant-design/icons';
 import FormPost from './FormPost';
 import { useRouter } from 'next/router';
+import ProfileImage from './ProfileImage';
 
 export default function MenuHeader({ setUpdater, updater }) {
   const router = useRouter();
@@ -24,11 +25,11 @@ export default function MenuHeader({ setUpdater, updater }) {
 
   return (
     <Menu
+      style={{ float: 'right' }}
       onClick={handleClick}
       theme="dark"
       mode="horizontal"
       defaultSelectedKeys={['1']}
-      style={{ float: 'right' }}
     >
       <Menu.Item key={'1'} style={{ borderRadius: '25px' }}>
         <HomeOutlined style={{ fontSize: '28px' }} />

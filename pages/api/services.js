@@ -57,12 +57,12 @@ const getAvailablePosts = async setListPosts => {
     return error;
   }
 };
-const getPost = async id => {
+const getPost = async (id,setSelectedPost) => {
   try {
     const response = await axios.get(
       `https://limitless-forest-49003.herokuapp.com/posts/${id}`
     );
-    // setListPosts(response.data);
+    setSelectedPost(response.data)
     return console.log(response);
   } catch (error) {
     return error;

@@ -14,6 +14,7 @@ export default function PostModal({
 
   return (
     <Modal
+    keyboard
       closeIcon={<CloseCircleOutlined style={{ fontSize: 30 }} />}
       title={title}
       visible={isModalVisible}
