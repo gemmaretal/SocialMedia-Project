@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Menu, Modal } from 'antd';
+import { Menu} from 'antd';
 import PostModal from './PostModal';
-import { UserOutlined, FormOutlined, HomeOutlined } from '@ant-design/icons';
+import {  FormOutlined, HomeOutlined } from '@ant-design/icons';
 import FormPost from './FormPost';
 import { useRouter } from 'next/router';
-import ProfileImage from './ProfileImage';
 
 export default function MenuHeader({ setUpdater, updater }) {
   const router = useRouter();
